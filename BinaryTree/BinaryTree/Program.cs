@@ -28,8 +28,11 @@ namespace BinaryTree
 
 
             //2. Count the nodes
+            //int cnt = objOps.CountBSTNodes(root);
+
 
             //3. Search in BST
+            bool isFound = objOps.LookupBST(root, 0);
 
             //4. Remove
 
