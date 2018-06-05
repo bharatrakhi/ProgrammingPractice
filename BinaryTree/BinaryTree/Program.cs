@@ -32,13 +32,40 @@ namespace BinaryTree
 
 
             //3. Search in BST
-            bool isFound = objOps.LookupBST(root, 0);
+            //bool isFound = objOps.LookupBST(root, 0);
 
-            //4. Remove
 
-            //5. IsBalance 
+            //4. Remove/Delete a node
+            //TBinaryTree newroot = objOps.DeleteFromBST(root, 5);
+
+            //5. isBST : Return true if a binary tree is a Binary Search Tree
+            bool IsBST = 
+
 
             //6. FindDepth
+
+            //7. MaxDepth
+
+            //8. MinValue
+            TBinaryTree Min = objOps.FindMin(root);
+
+            //9. PrintTree
+
+            //10. Print PostOrder
+
+            //11. hasPathSum
+
+            //12. PrintPath
+
+            //13. Mirror
+
+            //14. DoubleTree
+
+            //15. SameTree
+
+            //16. CountTrees
+
+            //17. 
 
         }
     }
