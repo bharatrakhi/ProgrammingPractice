@@ -39,7 +39,7 @@ namespace BinaryTree
             //TBinaryTree newroot = objOps.DeleteFromBST(root, 5);
 
             //5. isBST : Return true if a binary tree is a Binary Search Tree
-            bool IsBST = 
+            bool IsBST;
 
 
             //6. FindDepth
@@ -47,7 +47,7 @@ namespace BinaryTree
             //7. MaxDepth
 
             //8. MinValue
-            TBinaryTree Min = objOps.FindMin(root);
+            //TBinaryTree Min = objOps.FindMin(root);
 
             //9. PrintTree
 

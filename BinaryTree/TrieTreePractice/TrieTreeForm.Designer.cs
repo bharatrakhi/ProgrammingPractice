@@ -28,33 +28,59 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnInsert = new System.Windows.Forms.Button();
+            this.txtInput = new System.Windows.Forms.TextBox();
+            this.lstResult = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
-            // button1
+            // btnInsert
             // 
-            this.button1.Location = new System.Drawing.Point(282, 145);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnInsert.Location = new System.Drawing.Point(305, 228);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(88, 66);
+            this.btnInsert.TabIndex = 0;
+            this.btnInsert.Text = "Insert Data";
+            this.btnInsert.UseVisualStyleBackColor = true;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
+            // 
+            // txtInput
+            // 
+            this.txtInput.Location = new System.Drawing.Point(261, 42);
+            this.txtInput.Name = "txtInput";
+            this.txtInput.Size = new System.Drawing.Size(228, 20);
+            this.txtInput.TabIndex = 1;
+            this.txtInput.TextChanged += new System.EventHandler(this.txtInput_TextChanged);
+            // 
+            // lstResult
+            // 
+            this.lstResult.FormattingEnabled = true;
+            this.lstResult.Location = new System.Drawing.Point(261, 77);
+            this.lstResult.Name = "lstResult";
+            this.lstResult.Size = new System.Drawing.Size(228, 69);
+            this.lstResult.TabIndex = 2;
+            this.lstResult.Visible = false;
             // 
             // TrieTreeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.lstResult);
+            this.Controls.Add(this.txtInput);
+            this.Controls.Add(this.btnInsert);
             this.Name = "TrieTreeForm";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.TrieTreeForm_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnInsert;
+        private System.Windows.Forms.TextBox txtInput;
+        private System.Windows.Forms.ListBox lstResult;
     }
 }
 

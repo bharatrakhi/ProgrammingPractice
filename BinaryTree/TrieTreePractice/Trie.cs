@@ -1,4 +1,5 @@
-﻿using System;
+﻿// Reference : https://github.com/mission-peace/interview/blob/master/src/com/interview/suffixprefix/Trie.java
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,7 @@ namespace TrieTreePractice
         private class TrieNode
         {
             public Dictionary <char, TrieNode> children;
-            bool endOfWord;
+            public bool endOfWord;
             public TrieNode()
             {
                 children = new Dictionary<char, TrieNode>();
@@ -34,14 +35,46 @@ namespace TrieTreePractice
             for (int i=0;i<word.Length;i++)
             {
                 char ch = word[i];
-                TrieNode node = current.children[ch];
-                if (node==null)
+                TrieNode node ;//= current.children[ch];
+                if (current.children.ContainsKey(ch))
+                    node = current.children[ch];
+                else
                 {
                     node = new TrieNode();
                     current.children.Add(ch, node);
                 }
                 current = node;
              }
+            current.endOfWord = true;
+        }
+
+        public List<string> search(string word)
+        {
+            StringBuilder builder = new StringBuilder();
+            List<string> ResultList = new List<string>(); //will store results to return the values
+            
+            TrieNode current = root;
+            for (int i=0;i<word.Length;i++)
+            {
+                char ch = word[i];
+
+                if (current.children.ContainsKey(ch) )
+                {
+                    builder.Append(ch);
+                    TrieNode node = current.children[ch];
+                    while (!node.endOfWord)
+                    {
+                        foreach (var item in node.children)
+                        {
+                            builder.Append(item.Key);
+                            node = node.children[item.Key];
+                        }
+                    }
+
+                    ResultList.Add (builder.ToString());
+                }
+            }
+            return ResultList;
         }
 
 
